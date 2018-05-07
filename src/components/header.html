@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="shortcut icon" type="image/x-icon" href="" />
+  <title>@@title</title>
+  @@if (isMobile === true) {
+    <script>
+      var width = document.documentElement.clientWidth
+      width = width > 768?768:width
+      document.getElementsByTagName("html")[0].style.fontSize = (width / 750 * 100) + 'px'
+    </script>
+  }
+</head>
+<body>

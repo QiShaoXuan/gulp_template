@@ -7,7 +7,7 @@ const gulp = require('gulp'),
   cssMin = require('gulp-css'),
   uglify = require('gulp-uglify'),
   fileinclude = require('gulp-file-include')
-
+  
 gulp.task('delete', function (cb) {
   return del(['dist/*', '!dist/images', '!dist/fonts'], cb);
 })
@@ -26,7 +26,8 @@ gulp.task('fileinclude', function () {
       prefix: '@@',
       basepath: '@file'
     }))
-    .pipe(gulp.dest('dist')).pipe(browserSync.reload({
+    .pipe(gulp.dest('dist'))
+    .pipe(browserSync.reload({
     stream: true
   }))
 });

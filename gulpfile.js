@@ -35,9 +35,12 @@ gulp.task('fileinclude', function () {
 gulp.task('sass', () => {
   gulp.src('src/**/*.scss')
     .pipe(replace(/([-+]?[0-9]*\.?[0-9]+)px/g, function (match, p1) {
-      return Number(p1) / 100 + 'rem';
+      if (p1 > 4) {
+        return Number(p1) / 100 + 'rem';
+      } else {
+        return Number(p1) + 'px';
+      }
     }))
-    .pipe(replace("pnx", 'px'))
     .pipe(sass().on('error', sass.logError))
     .pipe(cssMin())
     .pipe(gulp.dest('dist'))

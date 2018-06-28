@@ -69,7 +69,7 @@ gulp.task('serve', ['delete'], function () {
       baseDir: ['dist']
     }
   });
-  gulp.watch('src/*.html', ['fileinclude'])
+  gulp.watch(['src/*.html','src/components/*.html'], ['fileinclude'])
   gulp.watch(['src/styles*/asset*/*.css', 'src/scripts*/asset*/*.js', 'src/images*/**'], ['copy'])
   gulp.watch('src/**/*.scss', ['sass'])
   gulp.watch(['./src/**/*.js', '!./src/asset/*.js'], ['babel'])
